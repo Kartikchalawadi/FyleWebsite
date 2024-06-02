@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flye Webpages</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px 0;
+        }
+        .hero-text {
+            max-width: 50%;
+        }
+        .hero-image img {
+            width: auto;
+            height: 600px; /* Adjust the height as needed */
+            border-radius: 10px;
+        }
+        .text-danger {
+            color: #ff3c3c !important; /* Adjust color to match the design */
+        }
+        .hero-text h1 {
+            font-size: 3rem; /* Adjust font size to match the design */
+            font-weight: bold;
+        }
+        .hero-text p {
+            font-size: 1.2rem; /* Adjust font size to match the design */
+            color: #6c757d; /* Adjust color to match the design */
+        }
+        .btn-custom {
+            background-color: #e50914;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem; /* Adjust font size to match the design */
+            border-radius: 5px;
+        }
+        .modal-title {
+            text-decoration: none; /* Remove the underline */
+        }
+        #contactModalLabel{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .scrollable-content {
+            padding: 20px 0;
+        }
+        .services-section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .services-section h2 {
+            color: #d41919;
+            margin-bottom: 10px;
+        }
+
+        .services-section p {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .service-card {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+
+        .service-card3 {
+            background-color: rgb(245, 61, 61);
+            color: white;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .service-card3 .card-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .service-card3 .card-text {
+            font-size: 16px;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+
+        .service-card3 .read-more {
+            color: #e95353;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .service-card3 .read-more:hover {
+            text-decoration: underline;
+        }
+
+        .carousel-indicators {
+            bottom: -30px;
+        }
+       .read-more{
+        background-color: white;
+        
+       }
+       .coding-logo {
+        max-width: 50px; /* Adjust size as needed */
+        margin-bottom: 10px;
+      }
+      .project {
+    padding: 50px 0;
+}
+
+        .text-center 
+        {
+            margin-bottom: 10px;
+            color: #e50914;
+        }
+
+        .text-center1 {
+            margin-bottom: 30px;
+            color: black;
+        }
+
+        .img-fluid {
+            border-radius: 8px;
+            width: 100%;
+            height: auto; /* Ensure the image covers the container */
+            object-fit: cover; /* Ensure the image covers the container */
+        }
+
+        .list-group {
+            height: 100%; /* Make list group take the full height */
+        }
+
+        .list-group-item {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 33.33%; /* Divide the height equally among the items */
+        }
+
+        .list-group-item.active {
+            background-color: #f00; /* Red background for the active item */
+            border-color: #f00; /* Red border for the active item */
+            color: #fff; /* White text for the active item */
+        }
+
+        .list-group-item-action.active {
+            background-color: #f00; /* Red background for the active item */
+            border-color: #f00; /* Red border for the active item */
+            color: #fff; /* White text for the active item */
+        }
+
+        .project .container {
+            height: 500px; /* Set a fixed height for the container */
+        }
+
+        .project .row {
+            height: 100%; /* Make the row take the full height of the container */
+        }
+
+        .growth-section {
+    padding: 50px 0;
+    text-align: center;
+    margin-top: 50px; /* Add this line to create space between sections */
+}
+
+.growth-section h2 {
+    color: #e50914;
+    margin-bottom: 10px;
+}
+
+.growth-section h3 {
+    margin-bottom: 30px;
+}
+
+.growth-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 20px;
+}
+
+.growth-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.growth-card i {
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.growth-card p {
+    font-size: 1.2rem;
+    color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+}
+.heart-Logo {
+    width: 50px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+       
+ </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="container hero-section">
+        <div class="hero-text">
+            <h5 class="text-danger">AWARD WINNING</h5>
+            <h1 class="fw-bold">DIGITAL MARKETING AGENCY</h1>
+            <p>Morbi sed lacus nec risus finibus feugiat at fermentum nibh. Pellentesque vitae ante at elit fringilla eu at purus. Morbi sed lacus nec risus finibus feugiat at fermentum.</p>
+            <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#contactModal">CONTACT US</button>
+        </div>
+        <div class="hero-image">
+            <img src="12_d2eb514a-b764-4aa8-a30f-ad5993a341c7_462x500_crop_center.webp" alt="Woman crafting">
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Talk to us</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="contactForm" action="https://getform.io/f/pbqglqvb" method="POST">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName" required>
+                        </div>
+                        <button type="submit" class="btn btn-custom">Contact Us</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scrollable Content -->
+    <div class="container services-section">
+        <h2>WHAT WE DO</h2>
+        <p>SERVICES PROVIDE FOR YOU</p>
+    
+        <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="service-card">
+                                <img src="zkd1N1Asxo_440.jpg" alt="Service 1">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="service-card">
+                                <img src="61MHQM30qQL._AC_SX425_.jpg" alt="Service 2">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="service-card3">
+                                <div class="card-body text-center">
+                                    <img src="images-removebg-preview.png" alt="Coding Logo" class="coding-logo">
+                                    <h3 class="card-title">WEB DEVELOPMENT</h3>
+                                    <p class="card-text">Morbi sed lacus nec risus finibus feugiat et fermentum nibh. Pellentesque vitae ante et elit fringilla ac at purus.</p>
+                                    <a  href="https://www.fylehq.com" target="_blank" class="read-more">READ MORE</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="service-card">
+                                <img src="pexels-photo-7262795.jpeg" alt="Service 4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+        </div>
+    </div>
+    
+    <section class="project">
+        <div class="container">
+            <h2 class="text-center">OUR PROJECT</h2>
+            <h1 class="text-center1">WHY WE ARE BEST</h1>
+            <div class="row">
+                <div class="col-md-8">
+                    <img id="main-image" src="images/pexels-photo-326055.jpeg" alt="Main Image" class="img-fluid">
+                </div>
+                <div class="col-md-4 d-flex align-items-stretch">
+                    <div class="list-group w-100">
+                        <a href="#" class="list-group-item list-group-item-action active" data-image="images/pexels-photo-326055.jpeg">
+                            <h2 class="mb-1">Better Strategy & Quality</h2>
+                            <p class="mb-1">Set to launch on the manufacturer's new A330neo aircraft in 2017, it's offering lots of...</p>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action" data-image="images/download.jpg">
+                            <h2 class="mb-1">Genderless Kei - Japan's Hot</h2>
+                            <p class="mb-1">Set to launch on the manufacturer's new A330neo aircraft in 2017, it's offering lots of...</p>
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action" data-image="images/images.jpg">
+                            <h2 class="mb-1">Genderless Kei - Japan's Hot</h2>
+                            <p class="mb-1">Set to launch on the manufacturer's new A330neo aircraft in 2017, it's offering lots of...</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="growth-section">
+        <h2>EXPERTS GROWTH</h2>
+        <h3>OUR COMPANY GROWTH</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="growth-card text-center">
+                        <i class="bi bi-heart-fill"></i>
+                        <img src="images/download-removebg-preview.png" alt="heart-Logo" class="heart-Logo">
+                        <h4>199+</h4>
+                        <p>Satisfied Customers</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="growth-card text-center">
+                        <i class="bi bi-clock-fill"></i>
+                        <img src="images/download__2_-removebg-preview (1).png" alt="heart-Logo" class="heart-Logo">
+                        <h4>1591+</h4>
+                        <p>Days Of Operation</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="growth-card text-center">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <img src="images/download (2).jpg" alt="heart-Logo" class="heart-Logo">
+                        <h4>283+</h4>
+                        <p>Complete Project</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="growth-card text-center">
+                        <i class="bi bi-trophy-fill"></i>
+                        <img src="images/download__3_-removebg-preview.png" alt="heart-Logo" class="heart-Logo">
+                        <h4>75+</h4>
+                        <p>Win Awards</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.js" integrity="sha384-Wj4eauF+PM6lxIQn9CmU8C5uDbhKkaPdmPHp3UmG2sa4EzUOwGiWx76By7Eztp7n" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var mainImage = document.getElementById('main-image');
+            var listItems = document.querySelectorAll('.list-group-item');
+    
+            listItems.forEach(function(item) {
+                item.addEventListener('click', function(event) {
+                    event.preventDefault();
+    
+                    // Remove active class from all items
+                    listItems.forEach(function(innerItem) {
+                        innerItem.classList.remove('active');
+                    });
+    
+                    // Add active class to the clicked item
+                    item.classList.add('active');
+    
+                    // Change the main image source
+                    var newImageSrc = item.getAttribute('data-image');
+                    mainImage.setAttribute('src', newImageSrc);
+                });
+            });
+        });
+    </script>
+    </body>
+    </html>
